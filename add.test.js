@@ -60,4 +60,52 @@ describe("function strictEquals", function () {
     //ASSERT
     expect(result).toBe(expected);
   });
+  test("When it recieves 1 and '1', it should return false", function () {
+    //ARRANGE
+    const a = 1;
+    const b = "1";
+    const expected = false;
+
+    //ACT
+    const result = strictEquals(a, b);
+
+    //ASSERT
+    expect(result).toBe(expected);
+  });
+  test("When it recieves true and false, it should return false", function () {
+    //ARRANGE
+    const a = true;
+    const b = false;
+    const expected = false;
+
+    //ACT
+    const result = strictEquals(a, b);
+
+    //ASSERT
+    expect(result).toBe(expected);
+  });
+  test("When it recieves false and false, it should return true", function () {
+    //ARRANGE
+    const a = false;
+    const b = false;
+    const expected = true;
+
+    //ACT
+    const result = strictEquals(a, b);
+
+    //ASSERT
+    expect(result).toBe(expected);
+  });
+  test("When it recieves 'Water' and 'oil', it should return false", function () {
+    //ARRANGE
+    const a = "Water";
+    const b = "oil";
+    const expected = false;
+
+    //ACT
+    const result = strictEquals(a, b);
+
+    //ASSERT
+    expect(result).toBe(expected);
+  });
 });
