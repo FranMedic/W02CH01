@@ -34,3 +34,16 @@ test("When it recieves NaN and NaN, it should return false", function () {
   //ASSERT
   expect(result).toBe(expected);
 });
+
+test("When it recieves 0 and -0, it should return true", function () {
+  //ARRANGE
+  const a = 0;
+  const b = -0;
+  const expected = true;
+
+  //ACT
+  const result = strictEquals(a, b);
+
+  //ASSERT
+  expect(result).toBe(expected);
+});
