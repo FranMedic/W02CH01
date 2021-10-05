@@ -3,6 +3,10 @@ function strictEquals(a, b) {
     return false;
   } else if (Object.is(Math.abs(a), 0) && Object.is(Math.abs(b), 0)) {
     return true;
+  } else if (Object.is(a, b)) {
+    return true;
+  } else {
+    return false;
   }
 }
 test("When it recieves 1 and 1, it should return true", function () {
@@ -17,6 +21,7 @@ test("When it recieves 1 and 1, it should return true", function () {
   //ASSERT
   expect(result).toBe(expected);
 });
+
 test("When it recieves NaN and NaN, it should return false", function () {
   //ARRANGE
   const a = NaN;
